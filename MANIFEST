@@ -1,4 +1,4 @@
 MANIFEST
 Makefile.PL
-Date/Maya.pm
+lib/Date/Maya.pm
 t/000_tests.pl
