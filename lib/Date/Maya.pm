@@ -1,27 +1,21 @@
 package Date::Maya;
 
-#
-# $Id: Maya.pm,v 1.1 1999/09/10 18:01:05 abigail Exp abigail $
-#
-# $Log: Maya.pm,v $
-# Revision 1.1  1999/09/10 18:01:05  abigail
-# Initial revision
-#
-#
+use 5.006;
 
 use strict;
 use integer;
+use warnings;
+no  warnings 'syntax';
 use Exporter;
 
-use vars qw /@ISA @EXPORT @EXPORT_OK %EXPORT_TAGS $VERSION/;
-
-($VERSION) = '$Revision: 1.1 $' =~ /([\d.]+)/;
+our $VERSION     = '2009040201';
 
 
-@ISA         = qw (Exporter);
-@EXPORT      = qw (julian_to_maya maya_to_julian);
-@EXPORT_OK   = qw (MAYA_EPOCH1 MAYA_EPOCH2 MAYA_EPOCH3 maya_epoch);
-%EXPORT_TAGS =    (MAYA_EPOCH => [qw /MAYA_EPOCH1 MAYA_EPOCH2 MAYA_EPOCH3/]);
+our @ISA         = qw (Exporter);
+our @EXPORT      = qw (julian_to_maya maya_to_julian);
+our @EXPORT_OK   = qw (MAYA_EPOCH1 MAYA_EPOCH2 MAYA_EPOCH3 maya_epoch);
+our %EXPORT_TAGS =    (MAYA_EPOCH => [qw /MAYA_EPOCH1 MAYA_EPOCH2
+                                                      MAYA_EPOCH3/]);
 
 
 use constant MAYA_EPOCH1 => 584285;  # 13 Aug 3114 BC, Gregorian.
@@ -147,8 +141,7 @@ sub maya_to_julian ($) {
     $julian;
 }
 
-
-<<'=cut';
+__END__
 
 =pod
 
@@ -223,26 +216,37 @@ http://www.pip.dknet.dk/%7Ec-t/calendar.html
 
 =back
 
-=head1 REVISION HISTORY
+=head1 SEE ALSO
 
-    $Log: Maya.pm,v $
-    Revision 1.1  1999/09/10 18:01:05  abigail
-    Initial revision
+Sources are on github: L<< git://github.com/Abigail/date--maya.git >>.
 
+L<< DateTime::Calendar::Mayan >> is a plugin for the C<< DateTime >>
+framework.
 
 =head1 AUTHOR
 
-This package was written by Abigail, abigail@delanet.com
+This package was written by Abigail, L<< mailto:date-maya@abigail.be >>.
 
 =head1 COPYRIGHT AND LICENSE
 
-This package is copyright 1999 by Abigail.
+This package is copyright 1999 - 2009 by Abigail.
 
-This program is free and open software. You may use, copy, modify,
-distribute and sell this program (and any modified variants) in any way
-you wish, provided you do not restrict others to do the same.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
 
 =cut
-
-
-__END__
