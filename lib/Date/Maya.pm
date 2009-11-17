@@ -212,7 +212,7 @@ The Mayan Long Count calendar rolls over after 1872000 days.
 =item [1]
 
 Tondering, Claus: I<FREQUENTLY ASKED QUESTIONS ABOUT CALENDARS>
-http://www.pip.dknet.dk/%7Ec-t/calendar.html
+L<< http://www.tondering.dk/claus/calendar.html >>
 
 =back
 
