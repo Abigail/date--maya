@@ -1,3 +1,6 @@
+Version 2009112301
++ POD & Kwalitee checks.
+
 Version 2009102801
 + Remove execute bit from Makefile.PL
 
