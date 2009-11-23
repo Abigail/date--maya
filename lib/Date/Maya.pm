@@ -8,7 +8,7 @@ use warnings;
 no  warnings 'syntax';
 use Exporter;
 
-our $VERSION     = '2009102801';
+our $VERSION     = '2009112301';
 
 
 our @ISA         = qw (Exporter);
