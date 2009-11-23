@@ -6,7 +6,11 @@
 # Change 1..1 below to 1..last_test_to_print .
 # (It may become useful if the test is moved to ./t subdirectory.)
 
-BEGIN { $| = 1; print "1..66\n"; }
+our $r = eval "require Test::NoWarnings; 1";
+
+my $tests = 66 + ($r || 0);
+print "1..$tests\n";
+
 END {print "not ok 1\n" unless $loaded;}
 use Date::Maya qw /:DEFAULT :MAYA_EPOCH maya_epoch/;
 $loaded = 1;
@@ -116,3 +120,9 @@ $t++; print $@ =~ /^Illegal argument/ ? "ok $t\n" : "not ok $t\n";
 eval {julian_to_maya 0};
 $t++; print $@ =~ /^Cannot deal with dates/ ? "ok $t\n" : "not ok $t\n";
 
+
+if ($r) {
+    my @w = Test::NoWarnings::warnings ();
+    $t ++;
+    print @w ? "not ok $t\n" : "ok $t\n";
+}

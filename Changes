@@ -1,6 +1,7 @@
 Version 2009112301
 + POD & Kwalitee checks.
 + Add requirements to Makefile.PL.
++ Add NoWarnings test.
 
 Version 2009102801
 + Remove execute bit from Makefile.PL
